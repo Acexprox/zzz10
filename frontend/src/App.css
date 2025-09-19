@@ -341,6 +341,108 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
   transition: 0.3s;
 }
 
+/* تصميم زر القائمة مطابق لزر التحميل */
+.menu-btn-container {
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.menu-btn {
+  position: relative;
+  background: linear-gradient(#ffffff 30%, #ffffff 30%, #d6d6d6);
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  border: 2px solid #ffffff;
+  transition: 0.3s;
+  box-shadow: 0 4.8px 4.8px rgb(18 18 18 / 35%);
+  font-size: 16px;
+  color: grey;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-btn::before {
+  content: "";
+  width: 125%;
+  height: 125%;
+  background: rgb(224, 224, 224);
+  box-shadow: 0 3.2px 3.2px inset #808080;
+  position: absolute;
+  left: -12%;
+  top: -12%;
+  z-index: -1;
+  border-radius: inherit;
+  transition: 0.3s;
+}
+
+/* حالة زر القائمة المضغوط لمدة 5 ثواني */
+.menu-btn-pressed {
+  color: #00ff44 !important;
+  background: linear-gradient(#ffffff 30%, #ffffff 30%, #d6d6d6);
+}
+
+.menu-btn-pressed::before {
+  box-shadow: 
+    0 0 0 2px #00ff44 inset,
+    0 0 12px #00ff44 inset,
+    0 0 20px rgba(0, 255, 68, 0.8) inset !important;
+  animation: neonInsetPersistent 2s ease-in-out infinite alternate;
+}
+
+.menu-btn-pressed svg {
+  color: #00ff44 !important;
+  filter: drop-shadow(0 0 6px #00ff44) drop-shadow(0 0 12px rgba(0, 255, 68, 0.8)) !important;
+  animation: iconNeonPersistent 2s ease-in-out infinite alternate;
+}
+
+.menu-btn:focus {
+  outline: none;
+  box-shadow: 0 8px 4.8px rgb(18 18 18 / 35%);
+  background: linear-gradient(0deg, #ffffff 30%, #ffffff 30%, #d6d6d6);
+  color: #00ff88;
+}
+
+.menu-btn:focus svg {
+  color: #00ff88;
+  filter: drop-shadow(0 0 4px #00ff88) drop-shadow(0 0 8px rgba(0, 255, 136, 0.6));
+  animation: iconNeonPulse 1.5s ease-in-out infinite alternate;
+}
+
+.menu-btn:focus::before {
+  box-shadow: 
+    0 0 0 2px #00ff88 inset,
+    0 0 8px #00ff88 inset,
+    0 0 12px rgba(0, 255, 136, 0.4) inset;
+  animation: neonInsetPulse 1.5s ease-in-out infinite alternate;
+}
+
+.menu-btn:active {
+  color: #00ff44;
+}
+
+.menu-btn:active svg {
+  color: #00ff44;
+  filter: drop-shadow(0 0 6px #00ff44) drop-shadow(0 0 12px rgba(0, 255, 68, 0.8));
+  animation: iconNeonFlash 0.3s ease-out;
+}
+
+.menu-btn:active::before {
+  box-shadow: 
+    0 0 0 2px #00ff44 inset,
+    0 0 12px #00ff44 inset,
+    0 0 20px rgba(0, 255, 68, 0.8) inset;
+  animation: neonInsetFlash 0.3s ease-out;
+}
+
 /* حالة الزر المضغوط لمدة 5 ثواني */
 .download-btn-pressed {
   color: #00ff44 !important;
