@@ -392,6 +392,16 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
   animation: neonInsetFlash 0.3s ease-out;
 }
 
+.download-btn:active {
+  color: #00ff44;
+}
+
+.download-btn:active svg {
+  color: #00ff44;
+  filter: drop-shadow(0 0 6px #00ff44) drop-shadow(0 0 12px rgba(0, 255, 68, 0.8));
+  animation: iconNeonFlash 0.3s ease-out;
+}
+
 @keyframes neonInsetFlash {
   0% {
     box-shadow: 
