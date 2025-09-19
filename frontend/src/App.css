@@ -348,34 +348,55 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
 }
 
 .download-btn:focus::before {
-  box-shadow: 0 3.2px 3.2px inset #00ff88;
+  box-shadow: 
+    0 0 0 2px #00ff88 inset,
+    0 0 8px #00ff88 inset,
+    0 0 12px rgba(0, 255, 136, 0.4) inset;
   animation: neonInsetPulse 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes neonInsetPulse {
   0% {
-    box-shadow: 0 3.2px 3.2px inset #00ff88;
+    box-shadow: 
+      0 0 0 2px #00ff88 inset,
+      0 0 8px #00ff88 inset,
+      0 0 12px rgba(0, 255, 136, 0.4) inset;
   }
   100% {
-    box-shadow: 0 3.2px 3.2px inset #00ffaa;
+    box-shadow: 
+      0 0 0 2px #00ffaa inset,
+      0 0 10px #00ffaa inset,
+      0 0 16px rgba(0, 255, 170, 0.6) inset;
   }
 }
 
-/* تأثير إضافي عند الضغط - الخط الرمادي المنحوت يولع بالنيون */
+/* تأثير إضافي عند الضغط - الخط الدائري كامل يولع بالنيون */
 .download-btn:active::before {
-  box-shadow: 0 4px 4px inset #00ff44;
+  box-shadow: 
+    0 0 0 2px #00ff44 inset,
+    0 0 12px #00ff44 inset,
+    0 0 20px rgba(0, 255, 68, 0.8) inset;
   animation: neonInsetFlash 0.3s ease-out;
 }
 
 @keyframes neonInsetFlash {
   0% {
-    box-shadow: 0 3.2px 3.2px inset #00ff88;
+    box-shadow: 
+      0 0 0 2px #00ff88 inset,
+      0 0 8px #00ff88 inset,
+      0 0 12px rgba(0, 255, 136, 0.4) inset;
   }
   50% {
-    box-shadow: 0 4px 4px inset #00ff44;
+    box-shadow: 
+      0 0 0 2px #00ff44 inset,
+      0 0 12px #00ff44 inset,
+      0 0 20px rgba(0, 255, 68, 0.8) inset;
   }
   100% {
-    box-shadow: 0 4px 4px inset #00ff44;
+    box-shadow: 
+      0 0 0 2px #00ff44 inset,
+      0 0 12px #00ff44 inset,
+      0 0 20px rgba(0, 255, 68, 0.8) inset;
   }
 }
 
