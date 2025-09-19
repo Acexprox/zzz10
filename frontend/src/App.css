@@ -443,7 +443,7 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
   animation: neonInsetFlash 0.3s ease-out;
 }
 
-/* تصميم الأزرار الفرعية - نفس الشكل لكن بدون تأثيرات نيونية */
+/* تصميم الأزرار الفرعية - تأكيد عدم وجود ألوان خضراء */
 .submenu-btn {
   position: relative;
   background: linear-gradient(#ffffff 30%, #ffffff 30%, #d6d6d6);
@@ -454,7 +454,7 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
   transition: 0.3s;
   box-shadow: 0 4.8px 4.8px rgb(18 18 18 / 35%);
   font-size: 16px;
-  color: grey;
+  color: #666666 !important; /* لون رمادي ثابت */
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -476,15 +476,23 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
   transition: 0.3s;
 }
 
+.submenu-btn svg {
+  color: #666666 !important; /* لون رمادي ثابت للأيقونة */
+  filter: none !important; /* لا توهج */
+  animation: none !important; /* لا أنيميشن */
+}
+
 .submenu-btn:focus {
   outline: none;
   box-shadow: 0 8px 4.8px rgb(18 18 18 / 35%);
   background: linear-gradient(0deg, #ffffff 30%, #ffffff 30%, #d6d6d6);
-  color: #555555; /* لون رمادي عادي */
+  color: #555555 !important; /* رمادي فاتح */
 }
 
 .submenu-btn:focus svg {
-  color: #555555; /* لون رمادي عادي */
+  color: #555555 !important; /* رمادي فاتح للأيقونة */
+  filter: none !important;
+  animation: none !important;
 }
 
 .submenu-btn:focus::before {
@@ -492,11 +500,13 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
 }
 
 .submenu-btn:active {
-  color: #333333; /* رمادي داكن عند الضغط */
+  color: #444444 !important; /* رمادي داكن عند الضغط */
 }
 
 .submenu-btn:active svg {
-  color: #333333; /* رمادي داكن عند الضغط */
+  color: #444444 !important; /* رمادي داكن للأيقونة */
+  filter: none !important;
+  animation: none !important;
 }
 
 .submenu-btn:active::before {
@@ -506,15 +516,24 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
 .submenu-btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 6px rgb(18 18 18 / 40%);
+  color: #555555 !important;
+}
+
+.submenu-btn:hover svg {
+  color: #555555 !important;
+  filter: none !important;
+  animation: none !important;
 }
 
 /* الحالة النشطة للأزرار الفرعية - لون أصفر للصفحة الحالية */
 .submenu-btn.active {
-  color: #fbbf24; /* text-yellow-600 */
+  color: #fbbf24 !important; /* text-yellow-600 */
 }
 
 .submenu-btn.active svg {
-  color: #fbbf24;
+  color: #fbbf24 !important;
+  filter: none !important;
+  animation: none !important;
 }
 
 /* حالة زر القائمة عندما تكون القائمة مفتوحة - إضاءة مستمرة */
