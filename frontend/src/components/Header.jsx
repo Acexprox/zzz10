@@ -266,7 +266,7 @@ const Header = () => {
  onClick={handleMenuClick}
  aria-expanded={isMenuOpen}
  aria-label={isMenuOpen ? 'إغلاق القائمة' : 'فتح القائمة'}
- className={`menu-btn ${menuBtnPressed ? 'menu-btn-pressed' : ''}`}
+ className={`menu-btn ${isMenuOpen ? 'menu-btn-open' : ''}`}
  >
  {isMenuOpen ? <CloseIcon className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
 
