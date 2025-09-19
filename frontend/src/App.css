@@ -341,6 +341,51 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
   transition: 0.3s;
 }
 
+/* حالة الزر المضغوط لمدة 5 ثواني */
+.download-btn-pressed {
+  color: #00ff44 !important;
+  background: linear-gradient(#ffffff 30%, #ffffff 30%, #d6d6d6);
+}
+
+.download-btn-pressed::before {
+  box-shadow: 
+    0 0 0 2px #00ff44 inset,
+    0 0 12px #00ff44 inset,
+    0 0 20px rgba(0, 255, 68, 0.8) inset !important;
+  animation: neonInsetPersistent 2s ease-in-out infinite alternate;
+}
+
+.download-btn-pressed svg {
+  color: #00ff44 !important;
+  filter: drop-shadow(0 0 6px #00ff44) drop-shadow(0 0 12px rgba(0, 255, 68, 0.8)) !important;
+  animation: iconNeonPersistent 2s ease-in-out infinite alternate;
+}
+
+/* أنيميشن مستمر للحالة المضغوطة */
+@keyframes neonInsetPersistent {
+  0% {
+    box-shadow: 
+      0 0 0 2px #00ff44 inset,
+      0 0 12px #00ff44 inset,
+      0 0 20px rgba(0, 255, 68, 0.8) inset;
+  }
+  100% {
+    box-shadow: 
+      0 0 0 2px #00ff66 inset,
+      0 0 16px #00ff66 inset,
+      0 0 24px rgba(0, 255, 102, 0.9) inset;
+  }
+}
+
+@keyframes iconNeonPersistent {
+  0% {
+    filter: drop-shadow(0 0 6px #00ff44) drop-shadow(0 0 12px rgba(0, 255, 68, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 8px #00ff66) drop-shadow(0 0 16px rgba(0, 255, 102, 0.9));
+  }
+}
+
 .download-btn:focus {
   outline: none;
   box-shadow: 0 8px 4.8px rgb(18 18 18 / 35%);
