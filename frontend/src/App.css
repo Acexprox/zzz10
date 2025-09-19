@@ -443,85 +443,30 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
   animation: neonInsetFlash 0.3s ease-out;
 }
 
-/* تصميم الأزرار الفرعية بنفس تصميم زر القائمة الرئيسي */
+/* تصميم الأزرار الفرعية - بسيط وأنيق */
 .submenu-btn {
-  position: relative;
-  background: linear-gradient(#ffffff 30%, #ffffff 30%, #d6d6d6);
-  width: 32px;
-  height: 32px;
-  border-radius: 32px;
-  border: 2px solid #ffffff;
-  transition: 0.3s;
-  box-shadow: 0 4.8px 4.8px rgb(18 18 18 / 35%);
-  font-size: 16px;
-  color: grey;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: white;
+  color: #374151; /* text-gray-700 */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.submenu-btn::before {
-  content: "";
-  width: 125%;
-  height: 125%;
-  background: rgb(224, 224, 224);
-  box-shadow: 0 3.2px 3.2px inset #808080;
-  position: absolute;
-  left: -12%;
-  top: -12%;
-  z-index: -1;
-  border-radius: inherit;
-  transition: 0.3s;
+.submenu-btn:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,0.14);
+  transform: translateY(-1px);
 }
 
-.submenu-btn:focus {
-  outline: none;
-  box-shadow: 0 8px 4.8px rgb(18 18 18 / 35%);
-  background: linear-gradient(0deg, #ffffff 30%, #ffffff 30%, #d6d6d6);
-  color: #00ff88;
-}
-
-.submenu-btn:focus svg {
-  color: #00ff88;
-  filter: drop-shadow(0 0 4px #00ff88) drop-shadow(0 0 8px rgba(0, 255, 136, 0.6));
-  animation: iconNeonPulse 1.5s ease-in-out infinite alternate;
-}
-
-.submenu-btn:focus::before {
-  box-shadow: 
-    0 0 0 2px #00ff88 inset,
-    0 0 8px #00ff88 inset,
-    0 0 12px rgba(0, 255, 136, 0.4) inset;
-  animation: neonInsetPulse 1.5s ease-in-out infinite alternate;
-}
-
-.submenu-btn:active {
-  color: #00ff44;
-}
-
-.submenu-btn:active svg {
-  color: #00ff44;
-  filter: drop-shadow(0 0 6px #00ff44) drop-shadow(0 0 12px rgba(0, 255, 68, 0.8));
-  animation: iconNeonFlash 0.3s ease-out;
-}
-
-.submenu-btn:active::before {
-  box-shadow: 
-    0 0 0 2px #00ff44 inset,
-    0 0 12px #00ff44 inset,
-    0 0 20px rgba(0, 255, 68, 0.8) inset;
-  animation: neonInsetFlash 0.3s ease-out;
-}
-
-/* الحالة النشطة للأزرار الفرعية */
 .submenu-btn.active {
   color: #fbbf24; /* text-yellow-600 */
-}
-
-.submenu-btn.active svg {
-  color: #fbbf24;
 }
 
 /* حالة الزر المضغوط لمدة 5 ثواني */
