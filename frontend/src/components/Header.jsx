@@ -161,6 +161,7 @@ const linkIcons = {
 const Header = () => {
  const [isMenuOpen, setIsMenuOpen] = useState(false);
  const [isScrolled, setIsScrolled] = useState(false);
+ const [downloadBtnPressed, setDownloadBtnPressed] = useState(false);
  const location = useLocation();
  const menuBtnWrapperRef = useRef(null);
 
@@ -171,6 +172,16 @@ const Header = () => {
  window.addEventListener('scroll', handleScroll);
  return () => window.removeEventListener('scroll', handleScroll);
  }, []);
+
+ // وظيفة للتعامل مع الضغط على زر التحميل
+ const handleDownloadClick = (e) => {
+ setDownloadBtnPressed(true);
+ 
+ // إرجاع الزر لوضعه الأصلي بعد 5 ثواني
+ setTimeout(() => {
+ setDownloadBtnPressed(false);
+ }, 5000);
+ };
 
  const navLinks = [
  { path: '/', label: 'الرئيسية' },
