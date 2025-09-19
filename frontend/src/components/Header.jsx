@@ -248,7 +248,8 @@ const Header = () => {
  href={DOWNLOAD_URL}
  download="USO.apk"
  aria-label="تحميل التطبيق"
- className="download-btn"
+ className={`download-btn ${downloadBtnPressed ? 'download-btn-pressed' : ''}`}
+ onClick={handleDownloadClick}
  >
  <Download className="w-4 h-4" />
  </a>
