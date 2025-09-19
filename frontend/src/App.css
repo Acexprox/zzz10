@@ -423,6 +423,28 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
   }
 }
 
+/* تأثيرات النيون للأيقونة */
+@keyframes iconNeonPulse {
+  0% {
+    filter: drop-shadow(0 0 4px #00ff88) drop-shadow(0 0 8px rgba(0, 255, 136, 0.6));
+  }
+  100% {
+    filter: drop-shadow(0 0 6px #00ffaa) drop-shadow(0 0 12px rgba(0, 255, 170, 0.8));
+  }
+}
+
+@keyframes iconNeonFlash {
+  0% {
+    filter: drop-shadow(0 0 4px #00ff88) drop-shadow(0 0 8px rgba(0, 255, 136, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px #00ff44) drop-shadow(0 0 16px rgba(0, 255, 68, 1));
+  }
+  100% {
+    filter: drop-shadow(0 0 6px #00ff44) drop-shadow(0 0 12px rgba(0, 255, 68, 0.8));
+  }
+}
+
 /* ---- TrustMetrics animations ---- */
 @keyframes tm-pulse-soft { 0%, 100% { transform: scale(1);} 50% { transform: scale(1.08);} }
 .tm-pulse-soft { animation: tm-pulse-soft 2.6s ease-in-out infinite; }
