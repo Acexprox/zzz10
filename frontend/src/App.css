@@ -443,10 +443,9 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
   animation: neonInsetFlash 0.3s ease-out;
 }
 
-/* تصميم جميع الأزرار الفرعية - محددات قوية لضمان التطبيق على الكل */
+/* تصميم الأزرار الفرعية - نفس شكل القائمة والتنزيل لكن بدون توهج */
 .submenu-btn,
 .menu-btn [aria-label*="قائمة"] a,
-.menu-btn-container + button [aria-label*="قائمة"] a,
 div[aria-label*="قائمة"] a {
   position: relative !important;
   background: linear-gradient(#ffffff 30%, #ffffff 30%, #d6d6d6) !important;
@@ -457,7 +456,7 @@ div[aria-label*="قائمة"] a {
   transition: 0.3s !important;
   box-shadow: 0 4.8px 4.8px rgb(18 18 18 / 35%) !important;
   font-size: 16px !important;
-  color: #666666 !important;
+  color: grey !important;
   cursor: pointer !important;
   display: flex !important;
   align-items: center !important;
@@ -481,18 +480,16 @@ div[aria-label*="قائمة"] a::before {
   transition: 0.3s !important;
 }
 
-/* جميع الأيقونات SVG في الأزرار الفرعية */
+/* الأيقونات - لون رمادي عادي بدون توهج */
 .submenu-btn svg,
 .menu-btn [aria-label*="قائمة"] a svg,
 div[aria-label*="قائمة"] a svg {
-  color: #666666 !important;
+  color: grey !important;
   filter: none !important;
   animation: none !important;
-  stroke: #666666 !important;
-  fill: #666666 !important;
 }
 
-/* حالات التفاعل للأزرار الفرعية */
+/* حالة التركيز - تأثير خفيف بدون نيون */
 .submenu-btn:focus,
 .menu-btn [aria-label*="قائمة"] a:focus,
 div[aria-label*="قائمة"] a:focus {
@@ -508,8 +505,6 @@ div[aria-label*="قائمة"] a:focus svg {
   color: #555555 !important;
   filter: none !important;
   animation: none !important;
-  stroke: #555555 !important;
-  fill: #555555 !important;
 }
 
 .submenu-btn:focus::before,
@@ -518,6 +513,7 @@ div[aria-label*="قائمة"] a:focus::before {
   box-shadow: 0 3.2px 3.2px inset #999999 !important;
 }
 
+/* حالة الضغط - تأثير خفيف بدون نيون */
 .submenu-btn:active,
 .menu-btn [aria-label*="قائمة"] a:active,
 div[aria-label*="قائمة"] a:active {
@@ -530,8 +526,6 @@ div[aria-label*="قائمة"] a:active svg {
   color: #444444 !important;
   filter: none !important;
   animation: none !important;
-  stroke: #444444 !important;
-  fill: #444444 !important;
 }
 
 .submenu-btn:active::before,
@@ -540,25 +534,15 @@ div[aria-label*="قائمة"] a:active::before {
   box-shadow: 0 4px 4px inset #777777 !important;
 }
 
+/* حالة الهوفر - رفع خفيف */
 .submenu-btn:hover,
 .menu-btn [aria-label*="قائمة"] a:hover,
 div[aria-label*="قائمة"] a:hover {
   transform: translateY(-1px) !important;
   box-shadow: 0 6px 6px rgb(18 18 18 / 40%) !important;
-  color: #555555 !important;
 }
 
-.submenu-btn:hover svg,
-.menu-btn [aria-label*="قائمة"] a:hover svg,
-div[aria-label*="قائمة"] a:hover svg {
-  color: #555555 !important;
-  filter: none !important;
-  animation: none !important;
-  stroke: #555555 !important;
-  fill: #555555 !important;
-}
-
-/* الحالة النشطة للأزرار الفرعية - لون أصفر للصفحة الحالية فقط */
+/* الحالة النشطة - لون أصفر للصفحة الحالية فقط */
 .submenu-btn.active,
 .menu-btn [aria-label*="قائمة"] a.active,
 div[aria-label*="قائمة"] a.active {
@@ -571,8 +555,6 @@ div[aria-label*="قائمة"] a.active svg {
   color: #fbbf24 !important;
   filter: none !important;
   animation: none !important;
-  stroke: #fbbf24 !important;
-  fill: #fbbf24 !important;
 }
 
 /* حالة زر القائمة عندما تكون القائمة مفتوحة - إضاءة مستمرة */
