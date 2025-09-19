@@ -469,6 +469,26 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
   color: #fbbf24; /* text-yellow-600 */
 }
 
+/* حالة زر القائمة عندما تكون القائمة مفتوحة - إضاءة مستمرة */
+.menu-btn-open {
+  color: #00ff44 !important;
+  background: linear-gradient(#ffffff 30%, #ffffff 30%, #d6d6d6);
+}
+
+.menu-btn-open::before {
+  box-shadow: 
+    0 0 0 2px #00ff44 inset,
+    0 0 12px #00ff44 inset,
+    0 0 20px rgba(0, 255, 68, 0.8) inset !important;
+  animation: neonInsetPersistent 2s ease-in-out infinite alternate;
+}
+
+.menu-btn-open svg {
+  color: #00ff44 !important;
+  filter: drop-shadow(0 0 6px #00ff44) drop-shadow(0 0 12px rgba(0, 255, 68, 0.8)) !important;
+  animation: iconNeonPersistent 2s ease-in-out infinite alternate;
+}
+
 /* حالة الزر المضغوط لمدة 5 ثواني */
 .download-btn-pressed {
   color: #00ff44 !important;
