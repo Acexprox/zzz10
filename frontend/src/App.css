@@ -355,6 +355,19 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
   animation: neonInsetPulse 1.5s ease-in-out infinite alternate;
 }
 
+.download-btn:focus {
+  outline: none;
+  box-shadow: 0 8px 4.8px rgb(18 18 18 / 35%);
+  background: linear-gradient(0deg, #ffffff 30%, #ffffff 30%, #d6d6d6);
+  color: #00ff88;
+}
+
+.download-btn:focus svg {
+  color: #00ff88;
+  filter: drop-shadow(0 0 4px #00ff88) drop-shadow(0 0 8px rgba(0, 255, 136, 0.6));
+  animation: iconNeonPulse 1.5s ease-in-out infinite alternate;
+}
+
 @keyframes neonInsetPulse {
   0% {
     box-shadow: 
