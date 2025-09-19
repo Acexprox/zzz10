@@ -443,6 +443,32 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
   animation: neonInsetFlash 0.3s ease-out;
 }
 
+/* الأزرار الفرعية في القائمة - تصميم منفصل بدون توهج نيوني */
+.menu-btn [aria-label="قائمة الجوال بالأيقونات"] a {
+  /* إعادة تعيين أي تأثيرات نيونية محتملة */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10) !important;
+  background: white !important;
+  color: #374151 !important; /* text-gray-700 */
+  filter: none !important;
+  animation: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.menu-btn [aria-label="قائمة الجوال بالأيقونات"] a:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,0.14) !important;
+  transform: translateY(-1px);
+  color: #374151 !important;
+  filter: none !important;
+}
+
+.menu-btn [aria-label="قائمة الجوال بالأيقونات"] a svg {
+  color: inherit !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+/* زر القائمة الرئيسي فقط يحصل على التوهج النيوني */
+
 /* حالة الزر المضغوط لمدة 5 ثواني */
 .download-btn-pressed {
   color: #00ff44 !important;
