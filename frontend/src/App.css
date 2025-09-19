@@ -443,97 +443,136 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
   animation: neonInsetFlash 0.3s ease-out;
 }
 
-/* تصميم الأزرار الفرعية - تأكيد عدم وجود ألوان خضراء */
-.submenu-btn {
-  position: relative;
-  background: linear-gradient(#ffffff 30%, #ffffff 30%, #d6d6d6);
-  width: 32px;
-  height: 32px;
-  border-radius: 32px;
-  border: 2px solid #ffffff;
-  transition: 0.3s;
-  box-shadow: 0 4.8px 4.8px rgb(18 18 18 / 35%);
-  font-size: 16px;
-  color: #666666 !important; /* لون رمادي ثابت */
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+/* تصميم جميع الأزرار الفرعية - محددات قوية لضمان التطبيق على الكل */
+.submenu-btn,
+.menu-btn [aria-label*="قائمة"] a,
+.menu-btn-container + button [aria-label*="قائمة"] a,
+div[aria-label*="قائمة"] a {
+  position: relative !important;
+  background: linear-gradient(#ffffff 30%, #ffffff 30%, #d6d6d6) !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 32px !important;
+  border: 2px solid #ffffff !important;
+  transition: 0.3s !important;
+  box-shadow: 0 4.8px 4.8px rgb(18 18 18 / 35%) !important;
+  font-size: 16px !important;
+  color: #666666 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
 }
 
-.submenu-btn::before {
-  content: "";
-  width: 125%;
-  height: 125%;
-  background: rgb(224, 224, 224);
-  box-shadow: 0 3.2px 3.2px inset #808080;
-  position: absolute;
-  left: -12%;
-  top: -12%;
-  z-index: -1;
-  border-radius: inherit;
-  transition: 0.3s;
+.submenu-btn::before,
+.menu-btn [aria-label*="قائمة"] a::before,
+div[aria-label*="قائمة"] a::before {
+  content: "" !important;
+  width: 125% !important;
+  height: 125% !important;
+  background: rgb(224, 224, 224) !important;
+  box-shadow: 0 3.2px 3.2px inset #808080 !important;
+  position: absolute !important;
+  left: -12% !important;
+  top: -12% !important;
+  z-index: -1 !important;
+  border-radius: inherit !important;
+  transition: 0.3s !important;
 }
 
-.submenu-btn svg {
-  color: #666666 !important; /* لون رمادي ثابت للأيقونة */
-  filter: none !important; /* لا توهج */
-  animation: none !important; /* لا أنيميشن */
-}
-
-.submenu-btn:focus {
-  outline: none;
-  box-shadow: 0 8px 4.8px rgb(18 18 18 / 35%);
-  background: linear-gradient(0deg, #ffffff 30%, #ffffff 30%, #d6d6d6);
-  color: #555555 !important; /* رمادي فاتح */
-}
-
-.submenu-btn:focus svg {
-  color: #555555 !important; /* رمادي فاتح للأيقونة */
+/* جميع الأيقونات SVG في الأزرار الفرعية */
+.submenu-btn svg,
+.menu-btn [aria-label*="قائمة"] a svg,
+div[aria-label*="قائمة"] a svg {
+  color: #666666 !important;
   filter: none !important;
   animation: none !important;
+  stroke: #666666 !important;
+  fill: #666666 !important;
 }
 
-.submenu-btn:focus::before {
-  box-shadow: 0 3.2px 3.2px inset #999999; /* ظل رمادي عادي */
-}
-
-.submenu-btn:active {
-  color: #444444 !important; /* رمادي داكن عند الضغط */
-}
-
-.submenu-btn:active svg {
-  color: #444444 !important; /* رمادي داكن للأيقونة */
-  filter: none !important;
-  animation: none !important;
-}
-
-.submenu-btn:active::before {
-  box-shadow: 0 4px 4px inset #777777; /* ظل رمادي داكن */
-}
-
-.submenu-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 6px rgb(18 18 18 / 40%);
+/* حالات التفاعل للأزرار الفرعية */
+.submenu-btn:focus,
+.menu-btn [aria-label*="قائمة"] a:focus,
+div[aria-label*="قائمة"] a:focus {
+  outline: none !important;
+  box-shadow: 0 8px 4.8px rgb(18 18 18 / 35%) !important;
+  background: linear-gradient(0deg, #ffffff 30%, #ffffff 30%, #d6d6d6) !important;
   color: #555555 !important;
 }
 
-.submenu-btn:hover svg {
+.submenu-btn:focus svg,
+.menu-btn [aria-label*="قائمة"] a:focus svg,
+div[aria-label*="قائمة"] a:focus svg {
   color: #555555 !important;
   filter: none !important;
   animation: none !important;
+  stroke: #555555 !important;
+  fill: #555555 !important;
 }
 
-/* الحالة النشطة للأزرار الفرعية - لون أصفر للصفحة الحالية */
-.submenu-btn.active {
-  color: #fbbf24 !important; /* text-yellow-600 */
+.submenu-btn:focus::before,
+.menu-btn [aria-label*="قائمة"] a:focus::before,
+div[aria-label*="قائمة"] a:focus::before {
+  box-shadow: 0 3.2px 3.2px inset #999999 !important;
 }
 
-.submenu-btn.active svg {
+.submenu-btn:active,
+.menu-btn [aria-label*="قائمة"] a:active,
+div[aria-label*="قائمة"] a:active {
+  color: #444444 !important;
+}
+
+.submenu-btn:active svg,
+.menu-btn [aria-label*="قائمة"] a:active svg,
+div[aria-label*="قائمة"] a:active svg {
+  color: #444444 !important;
+  filter: none !important;
+  animation: none !important;
+  stroke: #444444 !important;
+  fill: #444444 !important;
+}
+
+.submenu-btn:active::before,
+.menu-btn [aria-label*="قائمة"] a:active::before,
+div[aria-label*="قائمة"] a:active::before {
+  box-shadow: 0 4px 4px inset #777777 !important;
+}
+
+.submenu-btn:hover,
+.menu-btn [aria-label*="قائمة"] a:hover,
+div[aria-label*="قائمة"] a:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 6px rgb(18 18 18 / 40%) !important;
+  color: #555555 !important;
+}
+
+.submenu-btn:hover svg,
+.menu-btn [aria-label*="قائمة"] a:hover svg,
+div[aria-label*="قائمة"] a:hover svg {
+  color: #555555 !important;
+  filter: none !important;
+  animation: none !important;
+  stroke: #555555 !important;
+  fill: #555555 !important;
+}
+
+/* الحالة النشطة للأزرار الفرعية - لون أصفر للصفحة الحالية فقط */
+.submenu-btn.active,
+.menu-btn [aria-label*="قائمة"] a.active,
+div[aria-label*="قائمة"] a.active {
+  color: #fbbf24 !important;
+}
+
+.submenu-btn.active svg,
+.menu-btn [aria-label*="قائمة"] a.active svg,
+div[aria-label*="قائمة"] a.active svg {
   color: #fbbf24 !important;
   filter: none !important;
   animation: none !important;
+  stroke: #fbbf24 !important;
+  fill: #fbbf24 !important;
 }
 
 /* حالة زر القائمة عندما تكون القائمة مفتوحة - إضاءة مستمرة */
