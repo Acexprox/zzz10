@@ -162,6 +162,7 @@ const Header = () => {
  const [isMenuOpen, setIsMenuOpen] = useState(false);
  const [isScrolled, setIsScrolled] = useState(false);
  const [downloadBtnPressed, setDownloadBtnPressed] = useState(false);
+ const [menuBtnPressed, setMenuBtnPressed] = useState(false);
  const location = useLocation();
  const menuBtnWrapperRef = useRef(null);
 
@@ -180,6 +181,17 @@ const Header = () => {
  // إرجاع الزر لوضعه الأصلي بعد 5 ثواني
  setTimeout(() => {
  setDownloadBtnPressed(false);
+ }, 5000);
+ };
+
+ // وظيفة للتعامل مع الضغط على زر القائمة
+ const handleMenuClick = () => {
+ setIsMenuOpen(!isMenuOpen);
+ setMenuBtnPressed(true);
+ 
+ // إرجاع الزر لوضعه الأصلي بعد 5 ثواني
+ setTimeout(() => {
+ setMenuBtnPressed(false);
  }, 5000);
  };
 
